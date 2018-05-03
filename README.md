@@ -26,10 +26,10 @@ then, visit `http://localhost:8000`
 By just embedding a tiny HTML tag, you can insert "Connect my DNA" button in your website.
 
 ```html
-<form action='/' method='POST'>
-  <script src='https://sdk.genomelink.io/genomelink.js'
-          class='genomelink-button'
-          data-key='$GENOMELINK_CLIENT_ID'>
+<form action="/" method="POST">
+  <script src="https://sdk.genomelink.io/genomelink.js"
+          class="genomelink-button"
+          data-key="{{ GENOMELINK_CLIENT_ID }}">
   </script>
 </form>
 ```
