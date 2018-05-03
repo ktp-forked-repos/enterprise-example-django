@@ -10,6 +10,10 @@ This example web app demonstrates how developers can integrate GENOME LINK Enter
 ## How to run
 
 ```bash
+$ pip install -r requirements.txt
+```
+
+```bash
 $ export GENOMELINK_CLIENT_ID=<your_client_id>
 $ export GENOMELINK_CLIENT_SECRET=<your_client_secret>
 $ python manage.py runserver
@@ -39,7 +43,7 @@ When users click the "Connect my DNA" button, a window for registering their DNA
 After they successfully upload their data via this window, you will acquire an access token in server-side as POST parameter.
 
 ```python
-# TODO
+token = request.POST.get('genomelinkToken')
 ```
 
 This token is issued per user, thus by using this token, you can call the API endpoint for acquiring DNA report of each user from GENOME LINK API server.
