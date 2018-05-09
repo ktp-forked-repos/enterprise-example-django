@@ -2,24 +2,36 @@
 
 This example web app demonstrates how developers can integrate GENOME LINK Enterprise API.
 
+
 ## Requirements
 
 - Python >= 3.6
 - Django >= 1.11
 
+
 ## How to run
+
+Install required packages.
 
 ```bash
 $ pip install -r requirements.txt
 ```
 
+Export `GENOMELINK_CLIENT_ID` and `GENOMELINK_CLIENT_SECRET` as environment variables.
+
 ```bash
 $ export GENOMELINK_CLIENT_ID=<your_client_id>
 $ export GENOMELINK_CLIENT_SECRET=<your_client_secret>
+```
+
+Run the app on your localhost.
+
+```bash
 $ python manage.py runserver
 ```
 
-then, visit `http://localhost:8000`
+Then, open `http://localhost:8000` in your web browser.
+
 
 ## How it works
 
