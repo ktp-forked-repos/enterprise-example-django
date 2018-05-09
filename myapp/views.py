@@ -23,4 +23,4 @@ def index(request):
         except GenomeLinkError as e:
             messages.warning(request, e)
 
-    return render(request, 'dna/index.html', {'GENOMELINK_CLIENT_ID': settings.GENOMELINK_CLIENT_ID})
+    return render(request, 'myapp/index.html', {'GENOMELINK_CLIENT_ID': settings.GENOMELINK_CLIENT_ID})
