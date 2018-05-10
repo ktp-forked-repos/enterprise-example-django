@@ -60,4 +60,4 @@ token = request.POST.get('genomelinkToken')
 
 This token is issued per user, thus by using this token, you can call the API endpoint for acquiring DNA report of each user from GENOME LINK API server.
 
-![screen-shot-03](https://user-images.githubusercontent.com/1478450/39857481-852103b8-546e-11e8-8f53-728156e6a9a3.png)
+![screen-shot-03](https://user-images.githubusercontent.com/1478450/39858961-2c354c6e-5473-11e8-9c2b-9d900c3260c1.png)
