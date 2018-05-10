@@ -15,6 +15,16 @@
         <p class="lead">GENOME LINK example</p>
       </div>
 
+      {% if reports %}
+        {% for report in reports %}
+          {# Now you can display the reports. #}
+          <p>#{{ forloop.counter }} {{ report.phenotype.display_name }}</p>
+          <pre>&gt;&gt;&gt; report.phenotype['display_name']
+{{ report.phenotype.display_name }}
+&gt;&gt;&gt; report.summary['text']
+{{ report.summary.text }}</pre>
+        {% endfor %}
+      {% else %}
       <form action="/" method="POST">
         {% csrf_token %}
         <script src="https://sdk.genomelink.io/genomelink.js"
@@ -22,6 +32,7 @@
                 data-key="{{ GENOMELINK_CLIENT_ID }}">
         </script>
       </form>
+      {% endif %}
     </div>
   </body>
 </html>
