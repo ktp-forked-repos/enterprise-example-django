@@ -50,7 +50,7 @@ By just embedding a tiny HTML tag, you can insert "Connect my DNA" button in you
 
 When users click the "Connect my DNA" button, a window for registering their DNA will pop up.
 
-![screen-shot-02](https://user-images.githubusercontent.com/1478450/38174140-eedcc992-3603-11e8-875f-a7bcb23de564.png)
+![screen-shot-02](https://user-images.githubusercontent.com/1478450/39857257-a1ef5e82-546d-11e8-8469-37366f915412.png)
 
 After they successfully upload their data via this window, you will acquire an access token in server-side as POST parameter.
 
@@ -60,4 +60,4 @@ token = request.POST.get('genomelinkToken')
 
 This token is issued per user, thus by using this token, you can call the API endpoint for acquiring DNA report of each user from GENOME LINK API server.
 
-![screen-shot-03](https://user-images.githubusercontent.com/1478450/38173942-84bb8b50-3600-11e8-90d4-201a02c0254e.png)
+![screen-shot-03](https://user-images.githubusercontent.com/1478450/39857260-a38ad532-546d-11e8-8273-4521110982da.png)
