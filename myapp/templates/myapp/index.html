@@ -16,23 +16,71 @@
       </div>
 
       {% if reports %}
-        {% for report in reports %}
-          {# Now you can display the reports. #}
-          <p>#{{ forloop.counter }} {{ report.phenotype.display_name }}</p>
-          <pre>&gt;&gt;&gt; report.phenotype['display_name']
-{{ report.phenotype.display_name }}
-&gt;&gt;&gt; report.summary['text']
-{{ report.summary.text }}</pre>
-        {% endfor %}
+        <div style="min-width: 800px; margin-bottom: 30px;">
+          <canvas id="my-chart"></canvas>
+        </div>
+
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Phenotype</th>
+                <th>Genetic tendency</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for report in reports %}
+              <tr>
+                <td>{{ report.phenotype.display_name }}</td>
+                <td>{{ report.summary.text }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
       {% else %}
       <form action="/" method="POST">
         {% csrf_token %}
         <script src="https://sdk.genomelink.io/genomelink.js"
                 class="genomelink-button"
-                data-key="{{ GENOMELINK_CLIENT_ID }}">
+                data-key="{{ GENOMELINK_CLIENT_ID }}"
+                data-email="me@genomelink.io"
+                >
         </script>
       </form>
       {% endif %}
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script>
+    var myRadarChart = new Chart('my-chart', {
+      type: 'radar',
+      data: {
+        labels: [{% for report in reports %}'{{ report.phenotype.display_name }}',{% endfor %}],
+        datasets: [
+          {
+            data: [{% for report in reports %}{{ report.summary.score }},{% endfor %}]
+          }
+        ],
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scale: {
+          ticks: {
+            display: false,
+            maxTicksLimit: 5,
+            beginAtZero: true,
+            max: 4
+          },
+          pointLabels: {
+            fontSize: 13
+          }
+        },
+      },
+    });
+    </script>
   </body>
 </html>
