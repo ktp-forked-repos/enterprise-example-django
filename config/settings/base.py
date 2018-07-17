@@ -47,6 +47,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'www', 'static')
 
 #
 GENOMELINK_CLIENT_ID = os.environ['GENOMELINK_CLIENT_ID']
