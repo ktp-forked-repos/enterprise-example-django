@@ -42,7 +42,7 @@
       {% else %}
       <form action="/" method="POST">
         {% csrf_token %}
-        <script src="https://sdk.genomelink.io/genomelink.js"
+        <script src="http://localhost:8000/static/js/genomelink/genomelink.js"
                 class="genomelink-button"
                 data-key="{{ GENOMELINK_CLIENT_ID }}"
                 data-email="me@genomelink.io"
