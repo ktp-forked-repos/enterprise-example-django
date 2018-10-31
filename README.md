@@ -1,6 +1,6 @@
 # Token Auth Example - Python Django web app
 
-This example web app demonstrates how developers can integrate GENOME LINK Enterprise API.
+This example web app demonstrates how developers can integrate Genomelink Enterprise API.
 
 
 ## Requirements
@@ -58,6 +58,6 @@ After they successfully upload their data via this window, you will acquire an a
 token = request.POST.get('genomelinkToken')
 ```
 
-This token is issued per user, thus by using this token, you can call the API endpoint for acquiring DNA report of each user from GENOME LINK API server.
+This token is issued per user, thus by using this token, you can call the API endpoint for acquiring DNA report of each user from Genomelink API server.
 
 ![screen-shot-03](https://user-images.githubusercontent.com/1478450/39858961-2c354c6e-5473-11e8-9c2b-9d900c3260c1.png)
