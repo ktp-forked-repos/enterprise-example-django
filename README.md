@@ -1,4 +1,4 @@
-# Token Auth Example - Python Django web app
+# Example - Python Django web app
 
 This example web app demonstrates how developers can integrate Genomelink Enterprise API.
 
