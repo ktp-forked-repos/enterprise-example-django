@@ -1,6 +1,16 @@
-# Example - Python Django web app
+# Example Python Django web app
 
-This example web app demonstrates how developers can integrate Genomelink Enterprise API.
+This example web app demonstrates how developers can integrate Genomelink Enterprise API with Django.
+
+
+## Live demo
+
+You can try [live demo here](https://token-example-django.genomelink.io/) with example DNA data below.
+
+- [Example valid DNA data]()
+  - By uploading this valid DNA data via "Connect my DNA" button in the live demo, the data will be successfully interpreted and its reports data will be displayed.
+- [Example "invalid" DNA data]()
+  - By uploading this "invalid" DNA data via "Connect my DNA" button in the live demo, the validation process will abort interpreting it and the user will be prompted to re-try uploading with another file.
 
 
 ## Requirements
