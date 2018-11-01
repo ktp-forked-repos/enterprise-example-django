@@ -5,6 +5,8 @@ import genomelink
 
 
 def index(request):
+    reports = None
+
     if request.method == 'POST':
         # You'll acquire an access token issued per user as a POST parameter.
         token = request.POST.get('genomelinkToken')
@@ -19,8 +21,6 @@ def index(request):
             # When something is wrong with API request, API client raise errors.
             # In real applications, you should not display direct error messages to users.
             messages.warning(request, e)
-    else:
-        reports = None
 
     context = {
         'reports': reports,
