@@ -33,9 +33,58 @@ $ python manage.py runserver
 Then, open `http://localhost:8000` in your web browser.
 
 
+## List of reports
+
+| key                                     | `report.name` | `report.score.code`                                                                      |
+|-----------------------------------------|---------------|--------------------------------------------------------------------------------------|
+| `diet-recommendation`                   | Diet recommendation                   | `high-protein`, `low-fat`,  `low-carb`, `inconclusive` |
+| `vitamin-a`                             | Vitamin A   | `higher`, `slightly-higher`, `intermediate`, `slightly-lower`, `lower`, `inconclusive` |
+| `vitamin-b12`                           | Vitamin B12 | same as above |
+| `vitamin-d`                             | Vitamin D   | same as above |
+| `vitamin-e`                             | Vitamin E   | same as above |
+| `response-to-vitamin-e-supplementation` | Response to Vitamin E Supplementation | same as above |
+| `folate`                                | Folate	                              | same as above |
+| `calcium`                               | Calcium                               | same as above |
+| `magnesium`                             | Magnesium                             | same as above |
+| `phosphorus`                            | Phosphorus                            | same as above |
+| `iron`                                  | Iron                                  | same as above |
+| `alpha-linolenic-acid`                  | Alpha-Linolenic Acid               	  | same as above |
+| `beta-carotene`                         | Beta-Carotene                         | same as above |
+| `blood-glucose`                         | Blood Glucose                         | same as above |
+| `sleep-duration`                        | Sleep Duration                        | same as above |
+| `egg-allergy`                           | Egg Allergy                           | same as above |
+| `milk-allergy`                          | Milk Allergy                          | same as above |
+| `endurance-performance`                 | Endurance Performance                 | same as above |
+| `caffeine-metabolite-ratio`             | Caffeine Metabolite Ratio             | same as above |
+| `caffeine-consumption`                  | Caffeine Consumption                  | same as above |
+
+
+## SDK reference
+
+`genomelink.Report` object
+
+| attributes        | description                                            | example              |
+|-------------------|--------------------------------------------------------|----------------------|
+| report.name       | displayable `name` of the genetic tendency report      | Diet recommendation  |
+| report.score.code | `code` of the interpreted genetic tendency of the user | `high-protein`       |
+| report.score.text | displayable `text` of corresponding `code`             | High protein diet    |
+
+E.g.,
+
+```
+>>> reports = genomelink.Report.fetch(...)
+>>> reports['diet-recommendation'].name
+Diet recommendation
+>>> reports['diet-recommendation'].score.code
+`high-protein`
+>>> reports['diet-recommendation'].score.text
+High protein diet
+```
+
+
 ## How it works
 
-By just embedding a tiny HTML tag, you can insert "Connect my DNA" button in your website.
+By embedding a HTML tag as below, you can put "Connect my DNA" button in your website.
 
 ```html
 <form action="/" method="POST">
