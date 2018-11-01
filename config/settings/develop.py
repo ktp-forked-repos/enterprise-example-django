@@ -3,7 +3,7 @@ from .base import *
 
 DEBUG = True
 
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = 'SECURITY WARNING: keep the secret key used in production secret!'
 
 DATABASES = {
     'default': {
