@@ -105,11 +105,11 @@ By embedding a HTML tag as below, you can put "Connect my DNA" button in your we
 </form>
 ```
 
-![screen-shot-01](https://user-images.githubusercontent.com/1478450/38173924-656da8e6-3600-11e8-844f-3a4f5bf51743.png)
+![screen-shot-embed-button](https://user-images.githubusercontent.com/1478450/47902468-77861680-dec5-11e8-99dd-7535b9e17153.png)
 
 When users click the "Connect my DNA" button, a window for registering their DNA will pop up.
 
-![screen-shot-02](https://user-images.githubusercontent.com/1478450/39857476-8358a586-546e-11e8-835f-7ecadd198208.png)
+![screen-shot-file-input](https://user-images.githubusercontent.com/1478450/47902473-79e87080-dec5-11e8-8e1d-3d3e406ba2b2.png)
 
 After they successfully upload their data via this window, you will acquire an access token in server-side as POST parameter.
 
@@ -119,7 +119,7 @@ token = request.POST.get('genomelinkToken')
 
 This token is issued per user, thus by using this token, you can call the API endpoint for acquiring DNA report of each user from Genomelink API server.
 
-![screen-shot-completed](https://user-images.githubusercontent.com/1478450/43304742-3577ff40-91b0-11e8-8fc3-dbadff61ae12.png)
+![screen-shot-completed](https://user-images.githubusercontent.com/1478450/47902485-81a81500-dec5-11e8-84da-6485b6d528d0.png)
 
 Now you can render users DNA reports within a view `/` where we set as a `action` attribute of the form.
 
@@ -127,8 +127,8 @@ Now you can render users DNA reports within a view `/` where we set as a `action
 <form action='/' method='POST'>
 ```
 
-![screen-shot-render-reports](https://user-images.githubusercontent.com/1478450/43304748-39f822a2-91b0-11e8-8b51-3b48f69e2976.png)
+![screen-shot-render-reports](https://user-images.githubusercontent.com/1478450/47902487-840a6f00-dec5-11e8-9d6e-ba555249a62b.png)
 
 Even if users upload invalid data, they can retry uploading.
 
-![screen-shot-failed](https://user-images.githubusercontent.com/1478450/43304745-37ac5b44-91b0-11e8-8ee6-008861764c69.png)
+![screen-shot-failed](https://user-images.githubusercontent.com/1478450/47902497-866cc900-dec5-11e8-9d77-74e32465f708.png)
