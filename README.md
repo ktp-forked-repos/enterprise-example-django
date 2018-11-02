@@ -119,4 +119,16 @@ token = request.POST.get('genomelinkToken')
 
 This token is issued per user, thus by using this token, you can call the API endpoint for acquiring DNA report of each user from Genomelink API server.
 
-![screen-shot-03](https://user-images.githubusercontent.com/1478450/39858961-2c354c6e-5473-11e8-9c2b-9d900c3260c1.png)
+![screen-shot-completed](https://user-images.githubusercontent.com/1478450/43304742-3577ff40-91b0-11e8-8fc3-dbadff61ae12.png)
+
+Now you can render users DNA reports within a view `/` where we set as a `action` attribute of the form.
+
+```html
+<form action='/' method='POST'>
+```
+
+![screen-shot-render-reports](https://user-images.githubusercontent.com/1478450/43304748-39f822a2-91b0-11e8-8b51-3b48f69e2976.png)
+
+Even if users upload invalid data, they can retry uploading.
+
+![screen-shot-failed](https://user-images.githubusercontent.com/1478450/43304745-37ac5b44-91b0-11e8-8ee6-008861764c69.png)
