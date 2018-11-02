@@ -4,7 +4,10 @@ jobs:
     docker:
       - image: circleci/python:3.6-node-browsers
         environment:
-          DJANGO_SETTINGS_MODULE: config.settings.develop
+          DJANGO_SETTINGS_MODULE: config.settings
+      - image: circleci/python:2.7-node-browsers
+        environment:
+          DJANGO_SETTINGS_MODULE: config.settings
 
     working_directory: ~/repo
 
@@ -12,7 +15,6 @@ jobs:
       - checkout
 
       - run:
-          name: install dependencies
           command: |
             python3 -m venv venv
             . venv/bin/activate
@@ -20,11 +22,23 @@ jobs:
             pip install tox
 
       - run:
-          name: run tests
           command: |
             . venv/bin/activate
-            tox -e py36
+            tox
 
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+workflows:
+   version: 2
+   nightly:
+     triggers:
+       - schedule:
+           cron: "0 0 * * *"
+           filters:
+             branches:
+               only:
+                 - master
+     jobs:
+       - build
