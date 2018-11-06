@@ -101,7 +101,7 @@ E.g.,
 >>> reports['diet-recommendation'].name
 Diet recommendation
 >>> reports['diet-recommendation'].score.code
-`high-protein`
+high-protein
 >>> reports['diet-recommendation'].score.text
 High protein diet
 ```
